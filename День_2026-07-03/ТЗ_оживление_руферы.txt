@@ -1,0 +1,50 @@
+﻿# ТЗ · Оживление кадра «Помолвка на шпиле» (рилс «Это были мы», ключ-слово «КРЫША»)
+
+## Вход
+Готовый кадр Ани: пара на решётчатой площадке шпиля Эмпайр-стейт (он на колене с кольцом, она в шоке закрыла рот руками, сзади чёрный баннер «When love beats the lust for power, the world will know peace», красные маячки, город внизу). Кадр НЕ пересоздавать — загрузить файл Ани в Higgsfield (media_upload_widget → media_id).
+
+## Шаг 1 — ТЕСТ оживления (17.5 кр)
+- Модель: `seedance_2_0`
+- medias: `[{ value: <media_id фото>, role: "start_image" }]`
+- Параметры: `duration: 5`, `mode: "fast"`, `resolution: "720p"`, `aspect_ratio: "9:16"`, `generate_audio: false`
+- Промт (копировать как есть):
+
+```
+Animate this photo, keep it hyper-realistic like documentary rooftopping footage. Strong wind at extreme altitude: the woman's long red hair and loose clothes blow in the wind, the black banner with white hand-painted text ripples and waves — but the banner lettering stays perfectly stable, sharp and readable at all times. The kneeling man holds up the open ring box, the ring glints in the sunlight, he looks up at her with love. The woman slowly lowers her hands from her mouth, eyes tearing up, and breaks into an emotional smile, nodding yes. Very subtle slow camera drift with light parallax over the dizzying city far below, tiny cars and streets, soft moving clouds. Faces stay consistent and photorealistic, no morphing, no extra fingers or limbs, the steel platform and tower remain rigid and stable.
+```
+
+- Результат показать Ане. Дальше только по её «ок».
+
+## Шаг 2 — ФИНАЛ 10 сек (по «ок» Ани)
+- То же самое, но `duration: 10`; режим на выбор: `fast` = 35 кр, `std` 720p = 45 кр (1080p std = 90 кр — не берём).
+- Промт тот же + добавить в конец:
+
+```
+In the second half she gives him her hand, he gently slides the ring onto her finger, she laughs and covers her face with one hand, hair still blowing in the wind.
+```
+
+## Шаг 3 — Монтаж (без кредитов, ffmpeg/Remotion, 1080×1920, без звука)
+Тайминг и текст на экране (Montserrat/жирный гротеск, кириллица, БЕЗ эмодзи):
+
+| Сек | Кадр | Текст |
+|---|---|---|
+| 0–2 | Статичный кадр Ани (стилизовать под новостной кадр) | «Помолвка на Эмпайр-стейт. ЭТО БЫЛИ МЫ» |
+| 2–4 | Зум на лица, пауза | «ну почти…» |
+| 4–8 | Вспышка-переход → оживший кадр (Seedance) | «одно фото → и ты в главной новости планеты» |
+| 8–11 | Оживший кадр продолжается | «Они рискнули жизнью и получили 8 обвинений. Мне хватило одного фото» |
+| 11–12 | CTA-эндкард, акцент-пилюля на слове | «напиши КРЫША в комментариях» |
+
+Правила: на экране НЕ показывать @бота/ссылку; ключ-слово — только «КРЫША»; экспорт `0X_ФИНАЛ_руферы_1080x1920.mp4`; трендовый звук Аня добавит в IG сама.
+
+## Готовые тексты дня
+Подпись, закреп-коммент, автоответ «КРЫША», 5 сторис, чек-лист — в `День_2026-07-03/День_готовый.md` (уже написаны, не переписывать).
+
+## Бюджет
+Баланс на 03.07: 110.5 кр (Pro). Тест 17.5 + финал 35–45 = 52.5–62.5 кр. Кредиты тратить только по явному «ок» Ани, перед каждой генерацией — preflight `get_cost:true`.
+
+## (Запас) Промт исходного кадра
+Если вдруг понадобится пересоздать кадр (nano_banana_2, 9:16, 1.5 кр) — НО ТОЛЬКО по просьбе Ани:
+
+```
+Ultra-wide fisheye action-camera photo taken on top of the Empire State Building antenna spire, 443 meters above New York City. On a small rusty steel-grate maintenance platform, a young man with short blond hair and a beard, wearing a black sleeveless shirt and black pants, kneels on one knee holding an open ring box, proposing. In front of him stands a young woman with long windblown red hair, black corset top and black cargo pants, covering her mouth with both hands in emotional shock and joy. Behind them the white lattice antenna tower rises into a bright blue sky, and a large black fabric banner is tied to it with hand-painted white letters reading: "When love beats the lust for power, the world will know peace". Two red aviation warning lamps sit on the platform edges. Vertigo aerial perspective: the skyscraper facade drops away directly below, Manhattan street grid, rooftops and the Hudson river far beneath, bright summer sunlight, hyper-realistic photo, GoPro fisheye distortion, dizzying rooftopping shot.
+```
